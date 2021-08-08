@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="main-block">
+    <div class="left-part">
+      <i class="fas fa-graduation-cap"></i>
+      <h1>User Add Form</h1><br/>
+        <h4>Users List</h4><br/>
+        {% for id, name in users.items() %}
+            <p>{{ id }}.&nbsp;{{ name }} <a href="{{ name }}.{{ host }}:5000"> Go to site</a></p>
+        {% endfor %}      
+    </div>
+    <form action="/register" method="POST">
+      <div class="title">
+        <i class="fas fa-pencil-alt"></i> 
+        <h2>Register here</h2>
+      </div>
+      <div class="info">
+        <input class="fname" type="text" name="name" placeholder="Full name">
+      </div>
+      <button type="submit" href="/">Add User</button>
+    </form>
+  </div>
+{% endblock %}
